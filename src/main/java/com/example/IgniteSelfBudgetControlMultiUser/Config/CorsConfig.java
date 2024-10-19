@@ -14,10 +14,22 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:4200", "https://ignite-sbc.web.app")
+                        .allowedOrigins("https://ignite-sbc.web.app", "http://localhost:4200") // Add both production and local origins
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(true);
+                        .allowCredentials(true) // If credentials are needed, make sure specific origins are allowed
+                        .maxAge(3600);
+
+
+
+
+
+//                registry.addMapping("/**")
+//                        .allowedOrigins("*")  // Allow all origins
+//                        //.allowedOrigins("http://localhost:4200", "https://ignite-sbc.web.app")
+//                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+//                        .allowedHeaders("*")
+//                        .allowCredentials(true);
             }
         };
     }
