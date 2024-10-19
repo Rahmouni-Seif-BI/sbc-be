@@ -51,7 +51,7 @@ public class PurposeController implements IAbstractController<PurposeDTO> {
     }
 
     @Override
-    @Operation(operationId = "loadPurpose")
+    @Operation(operationId = "deletePurpose")
     @DeleteMapping("/Delete/{id}")
     public void delete(@PathVariable Long id) { purposeService.delete(id);}
 
