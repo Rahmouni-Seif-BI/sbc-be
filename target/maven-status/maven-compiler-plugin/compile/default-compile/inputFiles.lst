@@ -12,6 +12,7 @@ C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\Ent
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\Entities\UserEntity.java
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\Services\IDepositeService.java
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\ABC\Mappers\SpendingMapper.java
+C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\ABC\Exeptions\GlobalExceptionHandler.java
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\Services\CreditStatusServiceImp.java
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\Config\CorsConfig.java
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\DTO\UserDTO.java
@@ -33,6 +34,7 @@ C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\Rep
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\Services\Abstract\IAbstractService.java
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\Repositories\IDepositeRepository.java
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\DTO\CreditStatusDTO.java
+C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\ABC\Exeptions\InvalidLoginException.java
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\DTO\DepositeDTO.java
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\Repositories\IAccountRepository.java
 C:\_IGNITE\sbc-be\src\main\java\com\example\IgniteSelfBudgetControlMultiUser\Repositories\ISpendingRepository.java

@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -67,6 +68,10 @@ public class DepositeServiceImp implements IDepositeService, IAbstractService<De
         UserEntity user = global.getCurrentUser();
         Deposite deposite = depositeMapper.fromDepositeDTO(entity);
         deposite.setUser(user);
+
+        if(deposite.getActionDate() == null) {
+            deposite.setActionDate(new Date());
+        }
         deposite = iDepositeRepository.save(deposite);
         return  load(deposite.getId());    }
 

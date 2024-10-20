@@ -1,5 +1,6 @@
 package com.example.IgniteSelfBudgetControlMultiUser.Controllers;
 
+import com.example.IgniteSelfBudgetControlMultiUser.ABC.Exeptions.InvalidLoginException;
 import com.example.IgniteSelfBudgetControlMultiUser.Controllers.Abstract.IAbstractController;
 import com.example.IgniteSelfBudgetControlMultiUser.Config.JwtUtil;
 import com.example.IgniteSelfBudgetControlMultiUser.DTO.UserDTO;
@@ -33,26 +34,28 @@ public class UserEntityController implements IAbstractController<UserEntity> {
 
     @Operation(operationId = "LoginUserEntity")
     @PostMapping(value = "/Login/{login}/{pass}", produces = "application/json")
-    public ResponseEntity<UserDTO> login(@PathVariable String login, @PathVariable String pass) throws Exception {
+    public ResponseEntity<UserDTO> login(@PathVariable String login, @PathVariable String pass) {
 
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(login, pass)
             );
         } catch (Exception ex) {
-            throw new Exception("inavalid username/password");
+            throw new InvalidLoginException("Invalid username or password");
         }
-        String authToken =  jwtUtil.generateToken(login);
-        UserDTO userDto = userEntityService.login(login, pass) ;
+
+        String authToken = jwtUtil.generateToken(login);
+        UserDTO userDto = userEntityService.login(login, pass);
         userDto.setAuthtoken(authToken);
         userDto.setPass("");
-        if (userDto == null)
-        {
-            return new ResponseEntity<>(userDto, HttpStatus.NOT_FOUND);
+
+        if (userDto == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(userDto, HttpStatus.CREATED);
         }
-        else
-        return new ResponseEntity<>(userDto, HttpStatus.CREATED);
     }
+
 
 
     @Override
